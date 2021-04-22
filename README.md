@@ -2,6 +2,6 @@
 Group assignment for web communication course
 
 Group members are:
-Kalle Lampinen
-Sebastian Vikström
+Kalle Lampinen,
+Sebastian Vikström,
 Sanne Lopez

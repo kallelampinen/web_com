@@ -11,16 +11,21 @@ async function fetchAllPosts() {
     let postHTML = "";
     for (post of posts) {
       let dateObj = new Date(post.date);
+      let str = post.content;
+      const length = 100;
+      let trimmedString = str.substring(0, length);
 
       postHTML += `<div class="blog_post">
       <div class="container_copy">
         <h1>${post.title}</h1>
         <p>
-          ${post.content}
+        ${trimmedString}
         </p>
       </div>
         <div class="time">
-          <a class="btn_primary" href="#">Read More</a>
+          <a class="btn_primary" href="post.html?id=${
+            post["_id"]
+          }">Read More</a>
             <div class="date">
               <h3>Author: ${post.author}</h3>
               <h3>${formatDate(dateObj)}</h3>

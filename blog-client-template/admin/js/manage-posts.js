@@ -31,9 +31,24 @@ window.onload = function () {
         document.querySelector("#blog-content").innerHTML = postHTML;
       }
 
-      deletePost()
+      let delBtns = document.querySelectorAll("#delete-btn");
 
-      
+      for(let del of delBtns ){
+        del.addEventListener("click", async function(e) {
+          let delClick = e.target;
+          let postId = delClick.dataset.id;
+
+          try{
+            await fetch("http://localhost:5000/posts/" + postId,{method: "DELETE"})
+            delClick.parentNode.parentNode.remove()
+
+          }catch(error){
+            console.log(error)
+          }
+         
+        })
+        
+      }  
     } catch (error) {
       console.log(error);
     }
@@ -46,28 +61,4 @@ window.onload = function () {
     return `${dateObj.getFullYear()}-${dateObj.getMonth()}-${dateObj.getDate()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
   }
 
-
-  
-
-
-  function deletePost() {
-
-    let del = document.querySelectorAll("#delete-btn");
-    console.log(del)
-    for(delPost of del){
-        delPost.addEventlistener("click", function(e) {
-                e.preventDefault();
-                let delClick = e.target.id;
-                let postId = delClick.dataset.id;
-
-
-                console.log(delClick)
-                console.log(postId)
-        })
-    }
-
-
-
-  }
-  
   

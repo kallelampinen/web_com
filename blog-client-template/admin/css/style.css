@@ -24,6 +24,26 @@ body {
   flex-direction: column;
 }
 
+form {
+  margin-top: 50px;
+}
+input {
+  margin-bottom: 5px;
+  height: 50px;
+}
+h2 {
+  margin-bottom: 5px;
+}
+
+.form-style {
+  width: 80%;
+}
+
+textarea {
+  height: 300px;
+  margin-bottom: 30px;
+}
+
 table {
   margin-top: 20px;
 }
@@ -46,6 +66,20 @@ td {
   box-shadow: 1px 10px 2rem rgba(255, 94, 98, 0.5);
   transition: all 0.2s ease-in;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.create-btn {
+  padding: 2rem 4rem;
+  font-size: 40px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  justify-content: space-between;
+  height: 40px;
 }
 
 .btn_primary:hover {

@@ -1,11 +1,33 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Update post</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="" id="updatePost" class="wrapper">
+        <h2>Title</h2>
+        <input type="text" class="form-style" id="updateTitle" />
+        <h2>Author</h2>
+        <input type="text" class="form-style" id="updateAuthor" />
+        <h2>Content</h2>
+        <textarea
+          cols="30"
+          rows="10"
+          class="form-style"
+          id="updateContent"
+        ></textarea>
+        <div class="btns">
+          <a
+            href="/web_com/blog-client-template/admin/index.html"
+            class="btn_primary"
+            >BACK</a
+          ><input type="submit" value="Create" class="btn_primary" />
+        </div>
+      </form>
+    </div>
     <script src="js/update-post.js"></script>
-</body>
+  </body>
 </html>

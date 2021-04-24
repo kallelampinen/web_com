@@ -1,31 +1,37 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
-    <link rel="stylesheet" href="/web_com/blog-client-template/admin/css/style.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="/web_com/blog-client-template/admin/css/style.css"
+    />
+  </head>
+  <body>
     <nav>
       <div class="link">
         <a href="/web_com/blog-client-template/index.html">Back to Blog</a>
       </div>
     </nav>
     <div class="wrapper">
+      <a
+        href="/web_com/blog-client-template/admin/create-post.html"
+        class="btn_primary"
+        >Create Post</a
+      >
 
-        <a href="/web_com/blog-client-template/admin/create-post.html" class="btn_primary">Create Post</a>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Date</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="blog-content">
-                    <tr>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="blog-content">
+          <!-- <tr>
                         <td>dd</td>
                         <td>dd</td>
                         <td>dd</td>
@@ -33,15 +39,9 @@
                             <a href="#">Delete</a>
                             <a href="">Update</a>
                         </td>
-                    </tr>
-
-            </tbody>
-
-
-        </table>
-
-
-
+                    </tr> -->
+        </tbody>
+      </table>
     </div>
     <script src="/web_com/blog-client-template/admin/js/manage-posts.js"></script>
   </body>

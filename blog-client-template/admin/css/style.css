@@ -46,14 +46,30 @@ textarea {
 
 table {
   margin-top: 20px;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1.6em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+}
+table thead tr {
+background-color: #143c86;
+color: #ffffff;
+text-align: center;
 }
 
 tr,
 th,
 td {
+  padding: 12px 15px;
   border: 1px black solid;
 }
-
+td {
+  height: 35px;
+  vertical-align: bottom;
+}
 .btn_primary,
 .btn_back {
   border: none;

@@ -6,19 +6,26 @@ async function fetchAllPosts() {
   try {
     const response = await fetch("http://localhost:5000/posts");
     const posts = await response.json();
+    posts;
     console.log(posts);
 
     let postHTML = "";
     for (post of posts) {
       let dateObj = new Date(post.date);
+      console.log(dateObj);
       let str = post.content;
       const length = 100;
       let trimmedString = str.substring(0, length);
 
+      if (str.length > 100) {
+        trimmedString = str.substring(0, length) + "...";
+      } else {
+        trimmedString = str.substring(0, length);
+      }
       postHTML += `<div class="blog_post">
       <div class="container_copy">
         <h1>${post.title}</h1>
-        <p>
+        <p id="hundra">
         ${trimmedString}
         </p>
       </div>
@@ -26,6 +33,7 @@ async function fetchAllPosts() {
           <a class="btn_primary" href="post.html?id=${
             post["_id"]
           }">Read More</a>
+            <h3>Tags:${post.tags}</h3>
             <div class="date">
               <h3>Author: ${post.author}</h3>
               <h3>${formatDate(dateObj)}</h3>
@@ -41,5 +49,7 @@ async function fetchAllPosts() {
 }
 
 function formatDate(dateObj) {
-  return `${dateObj.getFullYear()}-${dateObj.getMonth()}-${dateObj.getDate()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
+  return `${dateObj.getFullYear()}-${
+    dateObj.getMonth() + 1
+  }-${dateObj.getDate()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
 }

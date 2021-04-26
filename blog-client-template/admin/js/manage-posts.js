@@ -18,6 +18,7 @@ async function fetchAllPosts() {
         <tr>
             <td>${post.title}</td>
             <td>${post.author}</td>
+            <td>${post.tags}</td>
             <td>${formatDate(dateObj)}</td>
             <td>
             <a href="#" id="delete-btn" data-id="${post["_id"]}">Delete</a>

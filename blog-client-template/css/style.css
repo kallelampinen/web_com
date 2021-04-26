@@ -27,7 +27,7 @@ body {
 .blog_post {
   padding: 20px 20px 20px 20px;
   background: #fff;
-  width: 500px;
+  width: 600px;
   border-radius: 10px;
   margin: 1rem 0;
   box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
@@ -88,4 +88,5 @@ nav a {
 .time {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }

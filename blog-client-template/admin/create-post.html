@@ -1,31 +1,52 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create post</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="" id="createPost">
+        <h2>Title</h2>
+        <input type="text" class="form-style" id="createTitle" required />
+        <h2>Author</h2>
+        <input type="text" class="form-style" id="createAuthor" required />
+        <h2>Content</h2>
+        <div class="content-area">
+          <select name="tags" id="tags" multiple>
+            <option class="select" value="Sport">Sport</option>
+            <option class="select" value="News">News</option>
+            <option class="select" value="Travel">Travel</option>
+            <option class="select" value="Politics">Politics</option>
+            <option class="select" value="Food">Food</option>
+            <option class="select" value="Fashion">Fashion</option>
+            <option class="select" value="Animals">Animal</option>
+          </select>
+          <textarea
+            name=""
+            cols="30"
+            rows="10"
+            class="form-style"
+            id="createContent"
+          ></textarea>
+        </div>
 
-<div class="container">
-
-    <form action="" id="createPost" class="wrapper">
-                <h2>Title</h2>
-            <input type="text" class="form-style" id="createTitle">
-            <h2>Author</h2>
-            <input type="text" class="form-style" id="createAuthor">
-            <h2>Content</h2>
-            <textarea name="" cols="30" rows="10" class="form-style" id="createContent"></textarea>
-
-            <div class="btns">
-                <a href="/web_com/blog-client-template/admin/index.html"><input type="submit" value="Back" class="btn_primary"></a><input type="submit" id="submitBtn" value="Create" class="btn_primary">
-            </div>
-         
-    </form>
-
-</div>
-
+        <div class="btns">
+          <a
+            href="/web_com/blog-client-template/admin/index.html"
+            class="btn_primary"
+            >BACK</a
+          ><input
+            type="submit"
+            id="submitBtn"
+            value="Create post"
+            class="btn_primary"
+          />
+        </div>
+      </form>
+    </div>
 
     <script src="js/create-post.js"></script>
-</body>
+  </body>
 </html>

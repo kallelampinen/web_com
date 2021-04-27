@@ -9,12 +9,12 @@
     <div class="wrapper">
       <form action="" id="updatePost">
         <h2>Title</h2>
-        <input type="text" class="form-style" id="updateTitle" />
+        <input type="text" class="form-style" id="updateTitle" required />
         <h2>Author</h2>
-        <input type="text" class="form-style" id="updateAuthor" />
+        <input type="text" class="form-style" id="updateAuthor" required />
         <h2>Content</h2>
         <div class="content-area">
-          <select name="Tags" id="tags" multiple>
+          <select name="Tags" id="tags" multiple required>
             <option value="Sport">Sport</option>
             <option value="News">News</option>
             <option value="Travel">Travel</option>
@@ -33,14 +33,9 @@
         <div class="btns">
           <a
             href="/web_com/blog-client-template/admin/index.html"
-            class="btn_primary"
+            class="update-btns"
             >Back</a
-          ><input
-            type="submit"
-            id="submitBtn"
-            value="Update"
-            class="btn_primary"
-          />
+          ><a id="submitBtn" value="Update" class="update-btns">Update</a>
         </div>
       </form>
     </div>

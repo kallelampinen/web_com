@@ -12,6 +12,7 @@ newPost.addEventListener("click", async function (e) {
     content: document.getElementById("createContent").value,
     author: document.getElementById("createAuthor").value,
     tags: selected,
+    date: formatDate(),
   };
 
   const myJson = JSON.stringify(blogData);
@@ -26,6 +27,10 @@ newPost.addEventListener("click", async function (e) {
   } catch (error) {
     console.log(error);
   } finally {
-    window.location.replace("/web_com/blog-client-template/index.html");
+    window.location.replace("/web_com/blog-client-template/admin/index.html");
   }
 });
+
+function formatDate() {
+  return new Date();
+}

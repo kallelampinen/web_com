@@ -24,10 +24,11 @@ async function loadPost() {
     </div>
   <div class="time">
     <a class="btn_back" href="index.html">BACK</a>
-      <div class="date">
+        <h3>Tags: ${post.tags}</h3>
+        <div id="date">
         <h3>Author: ${post.author}</h3>
         <h3>${formatDate(dateObj)}</h3>
-    </div>
+        </div>
   </div>
 </div>`;
     document.querySelector(".wrapper").innerHTML = onePostHTML;
@@ -37,5 +38,7 @@ async function loadPost() {
 }
 
 function formatDate(dateObj) {
-  return `${dateObj.getFullYear()}-${dateObj.getMonth()}-${dateObj.getDate()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
+  return `${dateObj.getFullYear()}-${
+    dateObj.getMonth() + 1
+  }-${dateObj.getDate()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
 }

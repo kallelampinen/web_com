@@ -12,8 +12,11 @@ async function fetchAllPosts() {
     let postHTML = "";
     for (post of posts) {
       let dateObj = new Date(post.date);
-      console.log(dateObj);
       let str = post.content;
+      let tags = post.tags;
+      let splitTags = tags.join(", ");
+
+      console.log(splitTags);
       const length = 100;
       let trimmedString = str.substring(0, length);
 
@@ -33,10 +36,10 @@ async function fetchAllPosts() {
           <a class="btn_primary" href="post.html?id=${
             post["_id"]
           }">Read More</a>
-            <h3>Tags:${post.tags}</h3>
+            <h3 class="tags">Tags:${splitTags}</h3>
             <div class="date">
               <h3>Author: ${post.author}</h3>
-              <h3>${formatDate(dateObj)}</h3>
+              <h3 id="date">${formatDate(dateObj)}</h3>
           </div>
         </div>
       </div>`;
@@ -49,7 +52,7 @@ async function fetchAllPosts() {
 }
 
 function formatDate(dateObj) {
-  return `${dateObj.getFullYear()}-${
+  return `${dateObj.getFullYear()}- 0${
     dateObj.getMonth() + 1
   }-${dateObj.getDate()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
 }

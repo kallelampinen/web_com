@@ -9,12 +9,12 @@ async function updatePosts() {
     let request = await fetch("http://localhost:5000/posts/" + postId);
 
     let response = await request.json();
-    console.log(response);
 
     document.getElementById("updateTitle").value = response.title;
     document.getElementById("updateAuthor").value = response.author;
     document.getElementById("updateContent").value = response.content;
     document.getElementById("tags").value = response.tags;
+    document.getElementById("date").innerHTML = response.date;
   } catch (error) {}
 }
 
@@ -28,15 +28,19 @@ function updated() {
 
     let select = document.getElementById("tags");
     selected = [...select.selectedOptions].map((option) => option.value);
-    console.log(selected);
-
     const blogData = {
       title: document.getElementById("updateTitle").value,
       content: document.getElementById("updateContent").value,
       author: document.getElementById("updateAuthor").value,
       tags: selected,
+      date: formatDate(),
     };
+
+    console.log(blogData);
+
+    console.log(blogData.date);
     const myJson = JSON.stringify(blogData);
+    console.log(myJson);
     try {
       await fetch("http://localhost:5000/posts/" + postId, {
         method: "PATCH",
@@ -51,4 +55,8 @@ function updated() {
       window.location.replace("/web_com/blog-client-template/index.html");
     }
   });
+}
+
+function formatDate() {
+  return new Date();
 }

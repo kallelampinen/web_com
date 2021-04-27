@@ -20,11 +20,13 @@ async function fetchAllPosts() {
             <td>${post.author}</td>
             <td>${post.tags}</td>
             <td>${formatDate(dateObj)}</td>
-            <td>
-            <a href="#" id="delete-btn" data-id="${post["_id"]}">Delete</a>
+            <td id="center-icons">
+            <a href="#" class="admin-links" id="delete-btn"  ><i class="far fa-trash-alt" data-id="${
+              post["_id"]
+            }"></i></a>
             <a href="/web_com/blog-client-template/admin/update-post.html?id=${
               post["_id"]
-            }">Update</a>
+            }" class="admin-links"><i class="fas fa-edit"></i></a>
         </td>
     </tr>
         `;
@@ -38,12 +40,13 @@ async function fetchAllPosts() {
       del.addEventListener("click", async function (e) {
         let delClick = e.target;
         let postId = delClick.dataset.id;
+        console.log(postId);
 
         try {
           await fetch("http://localhost:5000/posts/" + postId, {
             method: "DELETE",
           });
-          delClick.parentNode.parentNode.remove();
+          delClick.parentNode.parentNode.parentNode.remove();
         } catch (error) {
           console.log(error);
         }
@@ -55,5 +58,7 @@ async function fetchAllPosts() {
 }
 
 function formatDate(dateObj) {
-  return `${dateObj.getFullYear()}-${dateObj.getMonth()}-${dateObj.getDate()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
+  return `${dateObj.getFullYear()}-0${
+    dateObj.getMonth() + 1
+  }-${dateObj.getDate()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
 }

@@ -6,13 +6,10 @@ async function fetchAllPosts() {
   try {
     const response = await fetch("http://localhost:5000/posts");
     const posts = await response.json();
-    console.log(posts);
 
     let postHTML = "";
     for (post of posts) {
       let dateObj = new Date(post.date);
-
-      console.log(post.author);
 
       postHTML += `
         <tr>
@@ -40,7 +37,6 @@ async function fetchAllPosts() {
       del.addEventListener("click", async function (e) {
         let delClick = e.target;
         let postId = delClick.dataset.id;
-        console.log(postId);
 
         try {
           await fetch("http://localhost:5000/posts/" + postId, {

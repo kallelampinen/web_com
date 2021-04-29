@@ -7,16 +7,15 @@ async function fetchAllPosts() {
     const response = await fetch("http://localhost:5000/posts");
     const posts = await response.json();
     posts;
-    console.log(posts);
 
     let postHTML = "";
     for (post of posts) {
       let dateObj = new Date(post.date);
+      
       let str = post.content;
       let tags = post.tags;
       let splitTags = tags.join(", ");
 
-      console.log(splitTags);
       const length = 100;
       let trimmedString = str.substring(0, length);
 
@@ -53,6 +52,6 @@ async function fetchAllPosts() {
 
 function formatDate(dateObj) {
   return `${dateObj.getFullYear()}- 0${
-    dateObj.getMonth() + 1
+    dateObj.getMonth()+ 1
   }-${dateObj.getDate()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
 }

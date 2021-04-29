@@ -14,8 +14,8 @@ async function updatePosts() {
     document.getElementById("updateAuthor").value = response.author;
     document.getElementById("updateContent").value = response.content;
     document.getElementById("tags").value = response.tags;
-    document.getElementById("date").innerHTML = response.date;
-  } catch (error) {}
+  
+  } catch (error) {console.log(error)}
 }
 
 function updated() {
@@ -33,14 +33,11 @@ function updated() {
       content: document.getElementById("updateContent").value,
       author: document.getElementById("updateAuthor").value,
       tags: selected,
-      date: formatDate(),
+    
     };
 
-    console.log(blogData);
-
-    console.log(blogData.date);
     const myJson = JSON.stringify(blogData);
-    console.log(myJson);
+    
     try {
       await fetch("http://localhost:5000/posts/" + postId, {
         method: "PATCH",
@@ -52,7 +49,7 @@ function updated() {
     } catch (error) {
       console.log(error);
     } finally {
-      window.location.replace("/web_com/blog-client-template/index.html");
+      window.location.replace("/web_com/blog-client-template/admin/index.html");
     }
   });
 }

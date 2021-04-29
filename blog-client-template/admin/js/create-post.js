@@ -5,14 +5,14 @@ newPost.addEventListener("click", async function (e) {
 
   let select = document.getElementById("tags");
   selected = [...select.selectedOptions].map((option) => option.value);
-  console.log(selected);
+  
 
   const blogData = {
     title: document.getElementById("createTitle").value,
     content: document.getElementById("createContent").value,
     author: document.getElementById("createAuthor").value,
     tags: selected,
-    date: formatDate(),
+    
   };
 
   const myJson = JSON.stringify(blogData);

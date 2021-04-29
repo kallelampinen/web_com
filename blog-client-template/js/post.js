@@ -3,7 +3,7 @@ window.onload = function () {
 };
 
 async function loadPost() {
-  let queryString = window.location.search;
+ 
   let urlParams = new URLSearchParams(window.location.search);
   let postId = urlParams.get("id");
 

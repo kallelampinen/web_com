@@ -53,8 +53,8 @@ async function fetchAllPosts() {
   }
 }
 
+
 function formatDate(dateObj) {
-  return `${dateObj.getFullYear()}-0${
-    dateObj.getMonth() + 1
-  }-${dateObj.getDate()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
+  let dateString = String(dateObj).split(" ").splice(0,5).join(" ");
+  return dateString;
 }

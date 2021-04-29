@@ -10,7 +10,7 @@ async function fetchAllPosts() {
 
     let postHTML = "";
     for (post of posts) {
-      let dateObj = new Date(post.date);
+      let dateObj = new Date(post.date);  
       
       let str = post.content;
       let tags = post.tags;
@@ -51,7 +51,6 @@ async function fetchAllPosts() {
 }
 
 function formatDate(dateObj) {
-  return `${dateObj.getFullYear()}- 0${
-    dateObj.getMonth()+ 1
-  }-${dateObj.getDate()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
+  let dateString = String(dateObj).split(" ").splice(0,5).join(" ");
+  return dateString;
 }
